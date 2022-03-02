@@ -1,17 +1,16 @@
 package com.example.controller;
 
 import com.example.dto.Dto;
+import com.example.dto.GenericDto;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-/**
- * @author Bakhromjon Tue, 8:41 PM 3/1/2022
- */
+
 
 public interface BaseCrudController<
         CD extends Dto,
-        D extends AbstractDto,
-        UD extends AbstractDto
+        D extends GenericDto,
+        UD extends GenericDto
         > extends BaseController {
     D create(@RequestBody CD createDto);
 
