@@ -5,8 +5,6 @@ import com.example.dto.GenericDto;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
-
 public interface BaseCrudController<
         CD extends Dto,
         D extends GenericDto,
