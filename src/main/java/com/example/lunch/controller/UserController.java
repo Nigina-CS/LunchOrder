@@ -3,7 +3,6 @@ package com.example.lunch.controller;
 import com.example.lunch.dto.user.UserCreateDto;
 import com.example.lunch.dto.user.UserDto;
 import com.example.lunch.dto.user.UserUpdateDto;
-import com.example.lunch.entity.user.AuthUser;
 import com.example.lunch.service.user.UserServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -43,7 +42,7 @@ public class UserController extends AbstractController<UserServiceImpl> {
         return service.create(dto);
     }
 
-    @ApiOperation(value = "Get User By Id",response = AuthUser.class)
+    @ApiOperation(value = "Get User By Id",response = UserDto.class)
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     public UserDto get(@PathVariable Long id) {
         return service.get(id);
@@ -55,7 +54,7 @@ public class UserController extends AbstractController<UserServiceImpl> {
         return service.getAll();
     }
 
-    @ApiOperation(value = "Update User",response = AuthUser.class)
+    @ApiOperation(value = "Update User",response = UserDto.class)
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
     public UserDto update(@PathVariable Long id, UserUpdateDto dto) {
         return service.update(id, dto);

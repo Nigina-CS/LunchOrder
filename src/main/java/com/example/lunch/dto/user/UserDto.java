@@ -1,10 +1,13 @@
 package com.example.lunch.dto.user;
 
 import com.example.lunch.dto.GenericDto;
+import com.example.lunch.entity.user.Role;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,7 +17,7 @@ public class UserDto extends GenericDto {
     private String password;
     private String fullName;
     private String phoneNumber;
-    private String role;
+    private List <Role> roles;
     private String language;
     private String chatId;
     private Long departmentId;
@@ -24,13 +27,14 @@ public class UserDto extends GenericDto {
 
 
     @Builder(builderMethodName = "childBuilder")
-    public UserDto(Long id, String username, String password, String fullName, String phoneNumber, String role, String language, String chatId, Long departmentId, boolean active, boolean blocked, boolean deleted) {
+
+    public UserDto(Long id, String username, String password, String fullName, String phoneNumber, List<Role> roles, String language, String chatId, Long departmentId, boolean active, boolean blocked, boolean deleted) {
         super(id);
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
-        this.role = role;
+        this.roles = roles;
         this.language = language;
         this.chatId = chatId;
         this.departmentId = departmentId;

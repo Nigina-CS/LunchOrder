@@ -1,4 +1,4 @@
-package com.example.lunch.exceptions;
+package com.example.lunch.response;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
